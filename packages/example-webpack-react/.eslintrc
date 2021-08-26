@@ -1,0 +1,13 @@
+{
+  "extends": [
+    "@craigmorrison",
+    "@craigmorrison/eslint-config/react",
+    "@craigmorrison/eslint-config/jest"
+  ],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "extends": ["@craigmorrison/eslint-config/typescript"]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Node.js
+node_modules
+*.log
+npm-debug.log*
+.npm
+
+# Caches
+.eslintcache
+
+# Test coverage
+coverage
+
+# Build directory
+dist

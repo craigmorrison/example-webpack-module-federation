@@ -1,0 +1,65 @@
+{
+  "name": "example-webpack-react",
+  "version": "0.2.1",
+  "private": "true",
+  "description": "A Webpack project example using React",
+  "main": "src/index.tsx",
+  "scripts": {
+    "start": "webpack serve -c ./webpack.dev.js",
+    "build": "tsc && webpack -c ./webpack.prod.js",
+    "test": "jest",
+    "lint": "eslint --fix .",
+    "ts": "tsc --noEmit",
+    "format": "prettier --write .",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/craigmorrison/example-webpack-module-federation.git"
+  },
+  "author": "Craig Morrison <hello@craigmorrison.co.uk>",
+  "license": "MIT",
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "none",
+    "quoteProps": "as-needed"
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.{js,css,md}": "prettier --write"
+  },
+  "dependencies": {
+    "@emotion/styled": "^11.3.0",
+    "react-query": "^3.21.0",
+    "react-spinners": "^0.11.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/preset-react": "^7.14.5",
+    "@babel/preset-typescript": "^7.15.0",
+    "@craigmorrison/eslint-config": "^0.12.0",
+    "@emotion/babel-plugin": "^11.3.0",
+    "@emotion/react": "^11.4.1",
+    "@testing-library/react": "^12.0.0",
+    "@testing-library/user-event": "^13.2.1",
+    "@types/jest": "^27.0.1",
+    "@types/react": "^17.0.19",
+    "@types/react-dom": "^17.0.9",
+    "babel-jest": "^27.0.6",
+    "babel-loader": "^8.2.2",
+    "eslint": "^7.32.0",
+    "html-webpack-plugin": "^5.3.2",
+    "husky": "^7.0.1",
+    "jest": "^27.0.6",
+    "lint-staged": "^11.1.2",
+    "prettier": "^2.3.2",
+    "typescript": "^4.3.5",
+    "webpack": "^5.51.1",
+    "webpack-bundle-analyzer": "^4.4.2",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.0.0"
+  }
+}
