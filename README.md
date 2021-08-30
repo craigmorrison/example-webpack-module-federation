@@ -15,9 +15,11 @@ Install with `Yarn install`
 Run with `Yarn start`
 
 This will start all of the applications:
-Portal (host application): http://localhost:3000
-Table App: http://localhost:3001
-Counter App: http://localhost:3002
+
+- Portal (host application): http://localhost:3000
+- Table App: http://localhost:3001
+- Counter App: http://localhost:3002
+- People App (React example): http://localhost:3003
 
 The Portal application will consume the federated Table and Counter applications from their servers.
 

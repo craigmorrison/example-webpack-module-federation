@@ -21,6 +21,19 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx']
   },
+  devServer: {
+    contentBase: path.join(__dirname, 'dist'),
+    port: 3003,
+    historyApiFallback: true,
+    hot: false,
+    hotOnly: false,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
+      'Access-Control-Allow-Headers':
+        'X-Requested-With, content-type, Authorization'
+    }
+  },
   plugins: [
     new HtmlWebpackPlugin(),
     new ModuleFederationPlugin({
