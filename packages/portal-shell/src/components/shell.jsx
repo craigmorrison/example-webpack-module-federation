@@ -9,7 +9,7 @@ const People = React.lazy(() => import('people/People'));
 function Shell() {
   return (
     <Router>
-      <Header title="Demo Portal">
+      <Header title="Federated App">
         <nav className="main-nav">
           <ul>
             <li>
