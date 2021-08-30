@@ -37,8 +37,8 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin(),
     new ModuleFederationPlugin({
-      name: 'sw',
-      filename: 'remoteEntry.js',
+      name: 'people',
+      filename: 'people-remote-entry.js',
       exposes: {
         './People': './src/components/people'
       },

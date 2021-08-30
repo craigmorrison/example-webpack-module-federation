@@ -1,7 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ModuleFederationPlugin = require('webpack').container
-  .ModuleFederationPlugin;
+const { ModuleFederationPlugin } = require('webpack').container;
 const deps = require('./package.json').dependencies;
 
 module.exports = {
@@ -47,7 +46,7 @@ module.exports = {
     }),
     new ModuleFederationPlugin({
       name: 'table',
-      filename: 'remoteEntry.js',
+      filename: 'table-remote-entry.js',
       exposes: {
         './Table': './src/components/table.jsx'
       },

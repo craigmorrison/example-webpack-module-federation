@@ -4,13 +4,13 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 const Table = React.lazy(() => import('table/Table'));
 const Counter = React.lazy(() => import('counter/Counter'));
-const People = React.lazy(() => import('sw/People'));
+const People = React.lazy(() => import('people/People'));
 
 function Shell() {
   return (
     <Router>
       <Header title="Demo Portal">
-        <nav class="main-nav">
+        <nav className="main-nav">
           <ul>
             <li>
               <Link to="/">Home</Link>

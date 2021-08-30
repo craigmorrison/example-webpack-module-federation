@@ -1,9 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ModuleFederationPlugin = require('webpack').container
-  .ModuleFederationPlugin;
+const { ModuleFederationPlugin } = require('webpack').container;
 const deps = require('./package.json').dependencies;
-const SourceMapDevToolPlugin = require('webpack').SourceMapDevToolPlugin;
 
 module.exports = {
   entry: './src/app.js',
@@ -51,9 +49,9 @@ module.exports = {
       name: 'shell',
       filename: 'remoteEntry.js',
       remotes: {
-        table: 'table@http://localhost:3001/remoteEntry.js',
-        counter: 'counter@http://localhost:3002/remoteEntry.js',
-        sw: 'sw@http://localhost:8080/remoteEntry.js'
+        table: 'table@http://localhost:3001/table-remote-entry.js',
+        counter: 'counter@http://localhost:3002/counter-remote-entry.js',
+        people: 'people@http://localhost:3003/people-remote-entry.js'
       },
       shared: [
         {
