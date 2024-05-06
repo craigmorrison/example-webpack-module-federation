@@ -1,6 +1,6 @@
-# Module Federation - Portal Example
+# Module Federation - Example
 
-A set of applications showing how Webpack's Module Federation feature can be used to faciliate a micro-frontend architecture.
+A set of applications showing how Module Federation v2 can be used to faciliate a micro-frontend architecture.
 
 ## Requirements
 
