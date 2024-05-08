@@ -8,8 +8,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "webpack-cli serve",
-    "build": "webpack --mode production",
+    "start": "rspack serve",
+    "build": "rspack --mode production",
     "serve": "serve"
   },
   "devDependencies": {

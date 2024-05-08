@@ -5,8 +5,8 @@
   "description": "A Webpack project example using React",
   "main": "src/index.tsx",
   "scripts": {
-    "start": "webpack serve -c ./webpack.dev.js",
-    "build": "tsc && webpack -c ./webpack.prod.js",
+    "start": "rspack serve -c ./rspack.dev.js",
+    "build": "tsc && rspack -c ./rspack.prod.js",
     "test": "jest",
     "lint": "eslint --fix .",
     "ts": "tsc --noEmit",
@@ -26,7 +26,7 @@
   "dependencies": {
     "@emotion/styled": "^11.3.0",
     "react-query": "^3.21.0",
-    "react-spinners": "^0.11.0",
+    "react-spinners": "^0.13.8",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },

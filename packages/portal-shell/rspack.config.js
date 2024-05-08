@@ -1,17 +1,18 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { ModuleFederationPlugin } = require('webpack').container;
+const {
+  ModuleFederationPlugin
+} = require('@module-federation/enhanced/rspack');
 const deps = require('./package.json').dependencies;
 
 module.exports = {
   entry: './src/app.js',
   mode: 'development',
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
+    // contentBase: path.join(__dirname, 'dist'),
     port: 3000,
     historyApiFallback: true,
     hot: false,
-    hotOnly: false,
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
@@ -22,12 +23,19 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.m?jsx?$/,
-        exclude: /node_modules/,
+        test: /\.(?:t|j)sx?$/,
         use: {
           loader: 'babel-loader',
           options: {
-            rootMode: 'upward'
+            presets: [
+              [
+                '@babel/preset-react',
+                {
+                  runtime: 'automatic'
+                }
+              ],
+              '@babel/preset-env'
+            ]
           }
         }
       }
