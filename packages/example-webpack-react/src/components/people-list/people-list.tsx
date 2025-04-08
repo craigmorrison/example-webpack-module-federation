@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 import { ReactElement } from 'react';
-import { useQuery } from 'react-query';
+import { useQuery } from '@tanstack/react-query'; // Updated import
 import {
   sectionHeading,
   peopleHeading,
@@ -12,8 +12,6 @@ import {
   defintionListValue,
   loadingIndicator
 } from './people-list.styles';
-// import ScaleLoader from 'react-spinners/ScaleLoader';
-import { ScaleLoader } from 'react-spinners';
 
 type swPerson = {
   name: string;
@@ -42,15 +40,16 @@ type swPersonList = {
 };
 
 function PeopleList(): ReactElement {
-  const { isLoading, error, data } = useQuery<swPersonList, Error>(
-    'repoData',
-    () => fetch('https://swapi.dev/api/people').then((res) => res.json())
-  );
+  const { isLoading, error, data } = useQuery({
+    queryKey: ['repoData'], // Updated to use queryKey
+    queryFn: () =>
+      fetch('https://swapi.dev/api/people').then((res) => res.json())
+  });
 
   if (isLoading) {
     return (
       <div css={loadingIndicator}>
-        <ScaleLoader height="120" width="16" margin="8" radius="12" />
+        <p>LOADING</p>
       </div>
     );
   }
@@ -63,7 +62,7 @@ function PeopleList(): ReactElement {
     <>
       <h2 css={sectionHeading}>People</h2>
       <ul css={peopleList}>
-        {data?.results.map((person) => (
+        {data?.results.map((person: swPerson) => (
           <li key={person.name} css={peopleItem}>
             <h3 css={peopleHeading}>{person.name}</h3>
             <dl css={definitionList}>
