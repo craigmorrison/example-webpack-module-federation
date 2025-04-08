@@ -28,7 +28,7 @@ module.exports = {
       name: 'sw',
       filename: 'remoteEntry.js',
       exposes: {
-        './People': './src/components/people-list.tsx'
+        './People': './src/components/people/people.tsx'
       },
       shared: [
         {

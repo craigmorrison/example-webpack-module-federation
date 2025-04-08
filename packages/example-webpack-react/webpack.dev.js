@@ -40,7 +40,7 @@ module.exports = {
       name: 'people',
       filename: 'people-remote-entry.js',
       exposes: {
-        './People': './src/components/people'
+        './People': './src/components/people/people.tsx'
       },
       shared: [
         {
